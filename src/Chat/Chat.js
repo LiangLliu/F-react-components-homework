@@ -27,13 +27,17 @@ class Chat extends Component {
     }, 1000);
   }
 
+  changeMassage = (message) => {
+    console.log(message);
+  };
+
   render() {
     const { shop, messages } = this.state;
     return (
       <main className="Chat">
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
-        <ChatInput />
+        <ChatInput onSend={this.changeMassage} />
       </main>
     );
   }
